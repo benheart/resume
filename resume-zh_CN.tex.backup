@@ -23,12 +23,22 @@
 \datedsubsection{\textbf{哈尔滨工业大学}}{2012.09 - 2016.07}
 \textit{本科 \textperiodcentered\ 计算机学院 \textperiodcentered\ 信息安全}
 
+\section{\faCogs\ 专业技能}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item 英语: CET-6
+  \item 计算机职业资格认证: 210分，排名17.75\% / 共3819人
+  \item 编程语言: Java, Python, PHP, Mysql
+  \item 研究方向: Web开发、网络爬虫、数据挖掘与分析
+\end{itemize}
+
 \section{\faUsers\ 工作/实习经历}
-\datedsubsection{\textbf{上海叶道科技有限公司} \hfill \textit{Java开发工程师(全职)}}{2016.07 - 至今}
+\datedsubsection{\textbf{上海叶道科技有限公司} \hfill \textit{后台开发工程师(全职)}}{2016.07 - 至今}
 
 \begin{onehalfspacing}
-\datedline{WhatsMODE网站全栈开发}{2016.12 - 2017.05}
-\datedline{\textit{Magento2 + PHP + Varnish}}{\textit{https://www.whatsmode.com}}
+\datedline{WhatsMODE网站全栈开发 | }{2016.12 - 2017.05}
+\textit{}
+\datedline{\textit{Magento2 + PHP + Varnish}}{\textit{网站地址: https://www.whatsmode.com}}
 \begin{itemize}
   \item 基于开源项目Magento2进行二次定制开发
   \item 前端、后台、生产部署全栈开发
@@ -37,8 +47,8 @@
 \end{onehalfspacing}
 
 \begin{onehalfspacing}
-\datedline{MODE APP后台开发}{2016.07 - 2016.11}
-\datedline{\textit{Java + Spring Boot + Hibernate + JPA}}{\textit{https://itunes.apple.com/US/app/id1012183628}}
+\datedline{MODE APP后台开发 | Spring Boot + Hibernate + JPA}{2016.07 - 2016.11}
+\textit{APP下载地址: https://itunes.apple.com/US/app/id1012183628}
 \begin{itemize}
   \item 用户模块，集成RBAC权限管理系统
   \item 独立完成搜索模块，ES Client API集成开发
@@ -48,20 +58,20 @@
 
 \datedsubsection{\textbf{搜狐北京研发中心} \hfill \textit{大数据研发工程师(实习)}}{2016.03 - 2016.05}
 \begin{onehalfspacing}
-\datedline{大数据平台日志分析}{\textit{Scala + Spark + Kafka}}
+大数据平台日志分析 | Spark + Scala + Kafka
 \begin{itemize}
-  \item 利用Kafka每天定时收集40-50G规模日志数据，拥有TB级日志数据处理能力
-  \item 支持离线(Spark)、实时(Spark Streaming)两种处理模式
+  \item 拥有每天TB级日志数据处理能力
+  \item 支持离线、实时两种处理模式
   \item 采用迭代式开发，日志异常报错实时邮件通知
 \end{itemize}
 \end{onehalfspacing}
 
 \datedsubsection{\textbf{58同城(北京总部)} \hfill \textit{Java开发工程师(实习)}}{2015.07 - 2015.09}
 \begin{onehalfspacing}
-\datedline{会员增值业务产品开发}{\textit{MVC + Memcached}}
+会员增值业务产品开发 | MVC + Memcached
 \begin{itemize}
   \item 掌握MVC框架产品开发流程和产品上线维护流程
-  \item 大型企业数据库分库分表设计，Memcached分布式缓存使用
+  \item 实战企业数据库分库分表设计，Memcached分布式缓存使用
   \item 根据业务逻辑对外提供接口和微服务
 \end{itemize}
 \end{onehalfspacing}
@@ -96,34 +106,26 @@
 \end{itemize}
 \end{onehalfspacing}
 
-\datedsubsection{\textbf{\href{https://github.com/benheart/BGP-Analyzer}{BGP Monitoring System}}}{2015.03 - 2015.06}
-\datedline{\textit{基于BGP协议的网络预警系统}}{\textit{https://github.com/benheart/BGP-Analyzer}}
+\datedsubsection{\textbf{\href{https://github.com/benheart/}{BGP Monitoring System}}}{2015.03 - 2015.06}
+\datedline{\textit{基于BGP协议的网络预警系统}}{\textit{https://github.com/benheart/}}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item 每天定时从\href{http://www.routeviews.org}{RouteViews}官网自动爬取全球路由原始数据（1.4G），共计3.6亿条BGP路由数据
+  \item 自动从\href{http://www.routeviews.org}{RouteViews}官网定时爬取全球路由原始数据（1.4G），共计2.2..亿条路由数据（数据量多大？数据来源链接？）
   \item 利用无谷模型对网络安全事件进行检测、监控和预警
 \end{itemize}
 \end{onehalfspacing}
 
-\datedsubsection{\textbf{\href{https://github.com/benheart/linux-socket-programing}{Linux Socket Programing}}}{2015.03 - 2015.05}
-\datedline{\textit{Linux环境下C语言网络编程}}{\textit{https://github.com/benheart/linux-socket-programing}}
+\datedsubsection{\textbf{\href{https://github.com/benheart/}{Linux Socket Programing}}}{2015.03 - 2015.05}
+\datedline{\textit{Linux环境下C语言网络编程}}{\textit{https://github.com/benheart/}}
 \begin{onehalfspacing}
 \begin{itemize}
+  \item 利用BIND配置Zone
   \item 基于UDP的时钟协议的实现
   \item 基于TCP文件传输协议的实现
   \item 简单网络嗅探器的实现
   \item 基于ICMP协议的Ping实现
 \end{itemize}
 \end{onehalfspacing}
-
-\section{\faCogs\ 专业技能}
-% increase linespacing [parsep=0.5ex]
-\begin{itemize}[parsep=0.5ex]
-  \item 英语: CET-6
-  \item 计算机职业资格认证: 210分，排名17.75\% / 共3819人
-  \item 编程语言: Java, Python, PHP, Mysql
-  \item 研究方向: Web开发、网络爬虫、数据挖掘与分析
-\end{itemize}
 
 \section{\faTrophy\ 荣誉奖励}
 \datedline{\textit{哈尔滨工业大学“优秀学生干部”}}{2014.12}
