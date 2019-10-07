@@ -9,135 +9,167 @@
 \usepackage{cite}
 
 \begin{document}
-\pagenumbering{gobble} % suppress displaying page number
+    \pagenumbering{gobble} % suppress displaying page number
 
-\name{胡文俊}
+    \name{胡文俊}
 
-\basicInfo{
-  \email{geek.hu@qq.com} \textperiodcentered\ 
-  \phone{+86 186-4408-7527} \textperiodcentered\ 
-  \github[GitHub - benheart]{https://github.com/benheart} \textperiodcentered\ 
-  \faRss\ {\href{https://benheart.github.io}{Blog - BenHeart}}}
-  
-\section{\faGraduationCap\  教育背景}
-\datedsubsection{\textbf{哈尔滨工业大学}}{2012.09 - 2016.07}
-\textit{本科 \textperiodcentered\ 计算机学院 \textperiodcentered\ 信息安全}
+    \basicInfo{
+    \email{geek.hu@qq.com} \textperiodcentered\
+    \phone{+86 186-4408-7527} \textperiodcentered\
+    \github[GitHub - benheart]{https://github.com/benheart} \textperiodcentered\
+    \faRss\ {\href{https://www.geeeeeeek.com/}{Blog - BenHeart}}}
 
-\section{\faUsers\ 工作/实习经历}
-\datedsubsection{\textbf{上海叶道科技有限公司} \hfill \textit{Java开发工程师(全职)}}{2016.07 - 至今}
+    \section{\faGraduationCap\  教育背景}
+    \datedsubsection{\textbf{哈尔滨工业大学}}{2012.09 - 2016.07}
+    \textit{本科 \textperiodcentered\ 计算机学院 \textperiodcentered\ 信息安全}
 
-\begin{onehalfspacing}
-\datedline{WhatsMODE网站全栈开发}{2016.12 - 2017.05}
-\datedline{\textit{Magento2 + PHP + Varnish}}{\textit{https://www.whatsmode.com}}
-\begin{itemize}
-  \item 基于开源项目Magento2进行二次定制开发
-  \item 前端、后台、生产部署全栈开发
-  \item 集成网红管理系统，为网红定制网红店铺
-\end{itemize}
-\end{onehalfspacing}
+    \section{\faUsers\ 工作/实习经历}
 
-\begin{onehalfspacing}
-\datedline{MODE APP后台开发}{2016.07 - 2016.11}
-\datedline{\textit{Java + Spring Boot + Hibernate + JPA}}{\textit{https://itunes.apple.com/US/app/id1012183628}}
-\begin{itemize}
-  \item 用户模块，集成RBAC权限管理系统
-  \item 独立完成搜索模块，ES Client API集成开发
-  \item 社交模块，用户评论、点赞以及互动
-\end{itemize}
-\end{onehalfspacing}
+    \datedsubsection{\textbf{美团点评(上海)} \hfill \textit{Java后台开发}}{2017.07 - 至今}
+    \begin{onehalfspacing}
+        \datedline{\textbf{页面监控系统}}{2019.05 - 至今}
+        \textbf{简介}：一套页面爬取、比对、监控的系统，RD、QA可以极低成本进行页面端到端监控\newline
+        \textbf{挑战}：
+        \begin{itemize}
+            \item 无任何代码侵入，接入成本极低
+            \item 支持Jsoup、HtmlUnit、Selenium三种爬取方式
+            \item 采用加权的余弦相似度文本比对算法
+            \item 支持页面模块细粒度黑、白名单配置
+            \item 人性化的页面差异高亮预览
+        \end{itemize}
+        \textbf{收益}：
+        \begin{itemize}
+            \item 已有 4 条业务线共计 47 个页面接入页面监控系统
+            \item 共计发现 9 起线上页面故障，及时帮助业务方减少影响范围
+        \end{itemize}
+    \end{onehalfspacing}
+    \hwj{ }
 
-\datedsubsection{\textbf{搜狐北京研发中心} \hfill \textit{大数据研发工程师(实习)}}{2016.03 - 2016.05}
-\begin{onehalfspacing}
-\datedline{大数据平台日志分析}{\textit{Scala + Spark + Kafka}}
-\begin{itemize}
-  \item 利用Kafka每天定时收集40-50G规模日志数据，拥有TB级日志数据处理能力
-  \item 支持离线(Spark)、实时(Spark Streaming)两种处理模式
-  \item 采用迭代式开发，日志异常报错实时邮件通知
-\end{itemize}
-\end{onehalfspacing}
+    \begin{onehalfspacing}
+        \datedline{\textbf{统一 Token 加密服务}}{2018.10 - 2019.09}
+        \textbf{简介}：提供 phone、email 敏感信息统一 Token 化服务，对明文加密存储，并生成唯一 Token 返回\newline
+        \textbf{挑战}：
+        \begin{itemize}
+            \item 高可用：应用集群（到综、金融、出行）部署隔离；Tair缓存业务隔离，分BG调用；关键链路熔断降级；接入公司Rhnio服务限流
+            \item 高性能：数据库分 128 张表；采用 Redis、Tair 双缓存；新号段数据预热；LeafId 内存队列
+            \item 安全性：采用 AES256-GCM 加密算法，秘钥定期轮换；Token 与明文不能通过解密或计算获得，防破解、遍历
+            \item 易用性：Token 长度控制在 15 位以内，业务方无需做 DDL 改造；提供 Token 平台方便业务方自主接入，审核、管理流程化
+        \end{itemize}
+        \textbf{收益}：
+        \begin{itemize}
+            \item 全公司 X 大BG 共计 XXX 应用接入统一 Token 加密服务
+            \item 日均调用量 X 亿，峰值 QPS 20000+，共收录近 9 亿 Token 数据
+        \end{itemize}
+    \end{onehalfspacing}
+    \hwj{ }
 
-\datedsubsection{\textbf{58同城(北京总部)} \hfill \textit{Java开发工程师(实习)}}{2015.07 - 2015.09}
-\begin{onehalfspacing}
-\datedline{会员增值业务产品开发}{\textit{MVC + Memcached}}
-\begin{itemize}
-  \item 掌握MVC框架产品开发流程和产品上线维护流程
-  \item 大型企业数据库分库分表设计，Memcached分布式缓存使用
-  \item 根据业务逻辑对外提供接口和微服务
-\end{itemize}
-\end{onehalfspacing}
+    \datedsubsection{\textbf{上海叶道科技有限公司} \hfill \textit{Java开发工程师}}{2016.07 - 至今}
+    \begin{onehalfspacing}
+        \datedline{\textbf{WhatsMODE网站全栈开发}}{2016.12 - 2017.05}
+        \begin{itemize}
+            \item 基于开源项目Magento2进行二次定制开发
+            \item 前端、后台、生产部署全栈开发
+            \item 集成网红管理系统，为网红定制网红店铺
+        \end{itemize}
+    \end{onehalfspacing}
+    \hwj{ }
 
-% Reference Test
-%\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
-%An xxx optimized for xxx\cite{verma2015large}
-%\begin{itemize}
-%  \item main contribution
-%\end{itemize}
+    \begin{onehalfspacing}
+        \datedline{\textbf{MODE APP后台开发}}{2016.07 - 2016.11}
+        \begin{itemize}
+            \item 用户模块，集成RBAC权限管理系统
+            \item 独立完成搜索模块，ES Client API集成开发
+            \item 社交模块，用户评论、点赞以及互动
+        \end{itemize}
+    \end{onehalfspacing}
+    \hwj{ }
 
-\section{\faBriefcase\ 项目经历}
-\datedsubsection{\textbf{\href{https://github.com/benheart/magento2\_zh\_hans\_cn}{Magento2 Chinese Package}}}{2017.04 - 2017.06}
-\datedline{\textit{Magento2开源电商平台中文化}}{\textit{https://github.com/benheart/magento2\_zh\_hans\_cn}}
-\begin{onehalfspacing}
-\begin{itemize}
-  \item 学习并掌握Magento2国际化(i18n)原理
-  \item 基于\href{https://crowdin.com/project/magento-2/zh-CN}{官方翻译项目}制作Magento2中文语言包，
-  \item 利用Compose进行版本管理，实时同步分发语言包
-\end{itemize}
-\end{onehalfspacing}
+    \datedsubsection{\textbf{搜狐北京研发中心} \hfill \textit{大数据研发工程师(实习)}}{2016.03 - 2016.05}
+    \begin{onehalfspacing}
+        \datedline{\textbf{大数据平台日志分析}}{\textit{Scala + Spark + Kafka}}
+        \begin{itemize}
+            \item 利用Kafka每天定时收集40-50G规模日志数据，拥有TB级日志数据处理能力
+            \item 支持离线(Spark)、实时(Spark Streaming)两种处理模式
+            \item 采用迭代式开发，日志异常报错实时邮件通知
+        \end{itemize}
+    \end{onehalfspacing}
+    \hwj{ }
 
-\datedsubsection{\textbf{\href{https://github.com/benheart/microblog-crawler}{Sina Micro Blog Crawler}}}{2016.03 - 2016.06}
-\datedline{\textit{微博爬虫设计实现，数据挖掘分析}}{\textit{https://github.com/benheart/microblog-crawler}}
-\begin{onehalfspacing}
-\begin{itemize}
-  \item 爬取500多万微博用户资料、社交关系
-  \item 数据库分库分表，存储用户资料和队列信息
-  \item 多线程爬取(互斥锁)，支持多Cookie和断点爬取
-  \item 爬取热门话题和特定用户群体，利用K-近邻算法处理Json格式数据进行用户分类
-  \item 利用Matplotlib绘图库和Gephi可视化工具进行数据展示，构建人物关系图谱
-\end{itemize}
-\end{onehalfspacing}
+    \datedsubsection{\textbf{58同城(北京总部)} \hfill \textit{Java开发工程师(实习)}}{2015.07 - 2015.09}
+    \begin{onehalfspacing}
+        \datedline{\textbf{会员增值业务产品开发}}{\textit{MVC + Memcached}}
+        \begin{itemize}
+            \item 掌握MVC框架产品开发流程和产品上线维护流程
+            \item 大型企业数据库分库分表设计，Memcached分布式缓存使用
+            \item 根据业务逻辑对外提供接口和微服务
+        \end{itemize}
+    \end{onehalfspacing}
+    \hwj{ }
 
-\datedsubsection{\textbf{\href{https://github.com/benheart/BGP-Analyzer}{BGP Monitoring System}}}{2015.03 - 2015.06}
-\datedline{\textit{基于BGP协议的网络预警系统}}{\textit{https://github.com/benheart/BGP-Analyzer}}
-\begin{onehalfspacing}
-\begin{itemize}
-  \item 每天定时从\href{http://www.routeviews.org}{RouteViews}官网自动爬取全球路由原始数据（1.4G），共计3.6亿条BGP路由数据
-  \item 利用无谷模型对网络安全事件进行检测、监控和预警
-\end{itemize}
-\end{onehalfspacing}
+    \section{\faBriefcase\ 个人项目}
+    \datedsubsection{\textbf{\href{https://github.com/benheart/magento2\_zh\_hans\_cn}{Magento2 Chinese Package}}}{2017.04 - 2017.06}
+    \datedline{\textit{Magento2开源电商平台中文化}}{\textit{https://github.com/benheart/magento2\_zh\_hans\_cn}}
+    \begin{onehalfspacing}
+        \begin{itemize}
+            \item 学习并掌握Magento2国际化(i18n)原理
+            \item 基于\href{https://crowdin.com/project/magento-2/zh-CN}{官方翻译项目}制作Magento2中文语言包，
+            \item 利用Compose进行版本管理，实时同步分发语言包
+        \end{itemize}
+    \end{onehalfspacing}
+    \hwj{ }
 
-\datedsubsection{\textbf{\href{https://github.com/benheart/linux-socket-programing}{Linux Socket Programing}}}{2015.03 - 2015.05}
-\datedline{\textit{Linux环境下C语言网络编程}}{\textit{https://github.com/benheart/linux-socket-programing}}
-\begin{onehalfspacing}
-\begin{itemize}
-  \item 基于UDP的时钟协议的实现
-  \item 基于TCP文件传输协议的实现
-  \item 简单网络嗅探器的实现
-  \item 基于ICMP协议的Ping实现
-\end{itemize}
-\end{onehalfspacing}
+    \datedsubsection{\textbf{\href{https://github.com/benheart/microblog-crawler}{Sina Micro Blog Crawler}}}{2016.03 - 2016.06}
+    \datedline{\textit{微博爬虫设计实现，数据挖掘分析}}{\textit{https://github.com/benheart/microblog-crawler}}
+    \begin{onehalfspacing}
+        \begin{itemize}
+            \item 爬取500多万微博用户资料、社交关系
+            \item 数据库分库分表，存储用户资料和队列信息
+            \item 多线程爬取(互斥锁)，支持多Cookie和断点爬取
+            \item 爬取热门话题和特定用户群体，利用K-近邻算法处理Json格式数据进行用户分类
+            \item 利用Matplotlib绘图库和Gephi可视化工具进行数据展示，构建人物关系图谱
+        \end{itemize}
+    \end{onehalfspacing}
+    \hwj{ }
 
-\section{\faCogs\ 专业技能}
-% increase linespacing [parsep=0.5ex]
-\begin{itemize}[parsep=0.5ex]
-  \item 英语: CET-6
-  \item 计算机职业资格认证: 210分，排名17.75\% / 共3819人
-  \item 编程语言: Java, Python, PHP, Mysql
-  \item 研究方向: Web开发、网络爬虫、数据挖掘与分析
-\end{itemize}
+    \datedsubsection{\textbf{\href{https://github.com/benheart/BGP-Analyzer}{BGP Monitoring System}}}{2015.03 - 2015.06}
+    \datedline{\textit{基于BGP协议的网络预警系统}}{\textit{https://github.com/benheart/BGP-Analyzer}}
+    \begin{onehalfspacing}
+        \begin{itemize}
+            \item 每天定时从\href{http://www.routeviews.org}{RouteViews}官网自动爬取全球路由原始数据（1.4G），共计3.6亿条BGP路由数据
+            \item 利用无谷模型对网络安全事件进行检测、监控和预警
+        \end{itemize}
+    \end{onehalfspacing}
+    \hwj{ }
 
-\section{\faTrophy\ 荣誉奖励}
-\datedline{\textit{哈尔滨工业大学“优秀学生干部”}}{2014.12}
-\datedline{\textit{大一年度科技创新项目获得全院二等奖}}{2013.06}
+    \datedsubsection{\textbf{\href{https://github.com/benheart/linux-socket-programing}{Linux Socket Programing}}}{2015.03 - 2015.05}
+    \datedline{\textit{Linux环境下C语言网络编程}}{\textit{https://github.com/benheart/linux-socket-programing}}
+    \begin{onehalfspacing}
+        \begin{itemize}
+            \item 基于UDP的时钟协议的实现
+            \item 基于TCP文件传输协议的实现
+            \item 简单网络嗅探器的实现
+            \item 基于ICMP协议的Ping实现
+        \end{itemize}
+    \end{onehalfspacing}
+    \hwj{ }
 
-\section{\faLink\ 网站链接}
-% increase linespacing [parsep=0.5ex]
-\begin{itemize}[parsep=0.5ex]
-  \item 技术博客网址: http://benheart.github.io
-  \item GitHub网址: https://github.com/benheart
-\end{itemize}
+    \section{\faCogs\ 专业技能}
+    \begin{itemize}[parsep=0.5ex]
+        \item 英语: CET-6
+        \item 计算机职业资格认证: 210分，排名17.75\% / 共3819人
+        \item 编程语言: Java, Python, Mysql
+        \item 研究方向: 后台开发、网络爬虫、数据挖掘与分析
+    \end{itemize}
 
-%% Reference
-%\newpage
-%\bibliographystyle{IEEETran}
-%\bibliography{mycite}
+    \section{\faTrophy\ 荣誉奖励}
+    \datedline{\textit{哈尔滨工业大学“优秀学生干部”}}{2014.12}
+    \datedline{\textit{大一年度科技创新项目获得全院二等奖}}{2013.06}
+
+    \section{\faLink\ 网站链接}
+    % increase linespacing [parsep=0.5ex]
+    \begin{itemize}[parsep=0.5ex]
+        \item 技术博客网址: https://www.geeeeeeek.com/
+        \item GitHub网址: https://github.com/benheart
+    \end{itemize}
+
 \end{document}

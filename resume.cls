@@ -123,3 +123,8 @@
   {\par \textit{#1} ~ \textit{#2} \par}
   \vspace{0.85ex}
 }
+
+\newcommand{\hwj}[1]{
+  \centerline{#1}
+  \vspace{0.1ex}
+}
