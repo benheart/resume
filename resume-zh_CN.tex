@@ -26,40 +26,40 @@
 
     \section{\faUsers\ 工作/实习经历}
 
-    \datedsubsection{\textbf{美团点评(上海)} \hfill \textit{Java 后台开发}}{2017.07 - 至今}
+    \datedsubsection{\textbf{美团点评(上海)} \hfill \textit{Java后台开发}}{2017.07 - 至今}
     \begin{onehalfspacing}
-        \datedline{\textbf{页面监控系统}}{2019.05 - 至今}
+        \datedline{\textbf{页面监控系统}}{2019.05 - 2019.10}
         \textbf{简介}：一套页面爬取、比对、监控的系统，RD、QA可以极低成本进行页面端到端监控\newline
         \textbf{挑战}：
         \begin{itemize}
             \item 无任何代码侵入，接入成本极低
-            \item 支持 Jsoup、HtmlUnit、Selenium 三种爬取方式
+            \item 支持Jsoup、HtmlUnit、Selenium三种爬取方式
             \item 采用加权的余弦相似度文本比对算法
             \item 支持页面模块细粒度黑、白名单配置
             \item 人性化的页面差异高亮预览
         \end{itemize}
         \textbf{收益}：
         \begin{itemize}
-            \item 已有 4 条业务线共计 47 个页面接入页面监控系统
-            \item 共计发现 9 起线上页面故障，及时帮助业务方减少影响范围
+            \item 已有4条业务线共计47个页面接入页面监控系统
+            \item 共计发现9起线上页面故障，及时帮助业务方减少影响范围
         \end{itemize}
     \end{onehalfspacing}
     \blankline{ }
 
     \begin{onehalfspacing}
-        \datedline{\textbf{统一 Token 加密服务}}{2018.10 - 2019.09}
-        \textbf{简介}：提供 Phone、Email 敏感信息统一 Token 化服务，对明文加密存储，并生成唯一 Token 返回\newline
+        \datedline{\textbf{统一Token加密服务}}{2018.10 - 2019.09}
+        \textbf{简介}：提供Phone、Email敏感信息统一Token化服务，对明文加密存储，并生成唯一Token返回\newline
         \textbf{挑战}：
         \begin{itemize}
-            \item 高可用：应用集群（到综、金融、出行）部署隔离；Tair 缓存业务隔离，分 BG 调用；关键链路熔断降级；接入公司 Rhnio 服务限流，Hulk 弹性伸缩
-            \item 高性能：数据库分 128 张表；采用 Redis、Tair 双缓存；新号段数据预热；LeafId 内存队列
-            \item 安全性：采用 AES256-GCM 加密算法，秘钥定期轮换；Token 与明文不能通过解密或计算获得，防破解、遍历
-            \item 易用性：Token 长度控制在 15 位以内，业务方无需做 DDL 改造；提供 Token 平台方便业务方自主接入，审核、管理流程化
+            \item 高可用：应用集群（到综、金融、出行）部署隔离；Tair缓存业务隔离，分BG调用；关键链路熔断降级；接入公司Rhnio服务限流、Hulk弹性伸缩
+            \item 高性能：数据库分128张表；采用Redis、Tair双缓存；新号段数据预热；LeafId内存队列
+            \item 安全性：采用AES256-GCM加密算法，秘钥定期轮换；Token与明文不能通过解密或计算获得，防破解、遍历
+            \item 易用性：Token长度控制在15位以内，业务方无需做DDL改造；提供Token平台方便业务方自主接入，审核、管理流程化
         \end{itemize}
         \textbf{收益}：
         \begin{itemize}
-            \item 全公司 5 大 BG 61 个开发团队共计 300+ 应用接入统一 Token 加密服务
-            \item 日均调用量 8 亿，峰值 QPS 2W+，共收录近 9 亿 Token 数据
+            \item 全公司5大事业群61个开发团队共计300+应用接入统一Token加密服务
+            \item 日均调用量8亿，峰值QPS 2W+，共收录近9亿Token数据
         \end{itemize}
     \end{onehalfspacing}
     \blankline{ }
@@ -69,26 +69,36 @@
         \textbf{简介}：负责学培商家端、用户端品牌、在线教育、留学等常规业务开发\newline
         \textbf{内容}：
         \begin{itemize}
-            \item 品牌重构：废弃 FTL 模板，采用前后端动静分离重构品牌模块；新增品牌类目为垂直化做铺垫；品牌接入诚信、资质审核，先发后审
-            \item 在线教育：学培频道页新增"在线教育"入口；商户品牌、课程信息整合展示；新增品牌、课程索引提升查询效率
+            \item 品牌重构：废弃ftl模板，采用前后端动静分离重构品牌模块；新增类目属性为品牌垂直化做铺垫；品牌接入诚信、资质审核，先发后审
+            \item 在线教育：学培频道页新增在线教育入口；商户品牌、课程信息整合展示；新增品牌、课程索引提升查询效率
             \item 留学专区：全新留学专区频道页开发；新增留学院校、留学国家、留学类目等数据模型；留学院校运营后台功能开发
-            \item 频道页改版：
+            \item 频道页改版：金刚位、类目导航、中通位对接海马平台；支持模块可配置，扩展性和复用性；保证高可用，配置监控告警
         \end{itemize}
         \textbf{收益}：
         \begin{itemize}
-            \item 品牌重构后，线上品牌月均 Case 降低 70\%
-            \item 在线教育上线至今，共计接入 37 家全国知名在线教育品牌，极大提升业务收入
-            \item 留学专区上线至今，共计录入 456 所全球热门留学院校，新增 3 种留学商户通
-            \item 频道页改版后，首页打开速度提升 30\%，用户意向转化率提升 3\%
+            \item 品牌重构后，线上品牌月均Case降低70\%
+            \item 在线教育上线至今，共计接入37家全国知名在线教育品牌，极大提升业务收入
+            \item 留学专区上线至今，共计录入456所全球热门留学院校，新增3种留学商户通
+            \item 频道页改版后，首页打开速度提升30\%，用户意向转化率提升3\%
         \end{itemize}
     \end{onehalfspacing}
     \blankline{ }
 
-    \datedsubsection{\textbf{上海叶道科技有限公司} \hfill \textit{Java 开发工程师}}{2016.07 - 2017.07}
     \begin{onehalfspacing}
-        \datedline{\textbf{WhatsMODE 网站全栈开发}}{2016.12 - 2017.07}
+        \datedline{\textbf{团队建设}}{2017.08 - 2019.10}
         \begin{itemize}
-            \item 基于开源项目 Magento2 进行二次定制开发
+            \item 4次技术分享：《网络爬虫》、《分库分表》、《搜索之路》、《统一电话技术总结》
+            \item 规范制定：学培开发日志规范、项目压测规范
+            \item 人才培养：帮助两位新人排查线上Case，解答疑惑，分享沟通技巧、工作心得
+        \end{itemize}
+    \end{onehalfspacing}
+    \blankline{ }
+
+    \datedsubsection{\textbf{上海叶道科技有限公司} \hfill \textit{Java开发工程师}}{2016.07 - 2017.07}
+    \begin{onehalfspacing}
+        \datedline{\textbf{WhatsMODE网站全栈开发}}{2016.12 - 2017.07}
+        \begin{itemize}
+            \item 基于开源项目Magento2进行二次定制开发
             \item 前端、后台、生产部署全栈开发
             \item 集成网红管理系统，为网红定制网红店铺
         \end{itemize}
@@ -96,9 +106,9 @@
     \blankline{ }
 
     \begin{onehalfspacing}
-        \datedline{\textbf{MODE APP 后台开发}}{2016.07 - 2016.11}
+        \datedline{\textbf{MODE APP后台开发}}{2016.07 - 2016.11}
         \begin{itemize}
-            \item 用户模块，集成 RBAC 权限管理系统
+            \item 用户模块，集成RBAC权限管理系统
             \item 独立完成搜索模块，ES Client API集成开发
             \item 社交模块，用户评论、点赞以及互动
         \end{itemize}
@@ -109,7 +119,7 @@
     \begin{onehalfspacing}
         \datedline{\textbf{大数据平台日志分析}}{\textit{Scala + Spark + Kafka}}
         \begin{itemize}
-            \item 利用 Kafka 每天定时收集 40-50G 规模日志数据，拥有TB级日志数据处理能力
+            \item 利用Kafka每天定时收集40-50G规模日志数据，拥有TB级日志数据处理能力
             \item 支持离线(Spark)、实时(Spark Streaming)两种处理模式
             \item 采用迭代式开发，日志异常报错实时邮件通知
         \end{itemize}
@@ -120,8 +130,8 @@
     \begin{onehalfspacing}
         \datedline{\textbf{会员增值业务产品开发}}{\textit{MVC + Memcached}}
         \begin{itemize}
-            \item 掌握 MVC 框架产品开发流程和产品上线维护流程
-            \item 大型企业数据库分库分表设计，Memcached 分布式缓存使用
+            \item 掌握MVC框架产品开发流程和产品上线维护流程
+            \item 大型企业数据库分库分表设计，Memcached分布式缓存使用
             \item 根据业务逻辑对外提供接口和微服务
         \end{itemize}
     \end{onehalfspacing}
@@ -132,12 +142,11 @@
     \datedline{\textit{Magento2开源电商平台中文化}}{\textit{https://github.com/benheart/magento2\_zh\_hans\_cn}}
     \begin{onehalfspacing}
         \begin{itemize}
-            \item 学习并掌握 Magento2 国际化(i18n)原理
+            \item 学习并掌握Magento2国际化(i18n)原理
             \item 基于\href{https://crowdin.com/project/magento-2/zh-CN}{官方翻译项目}制作Magento2中文语言包，
-            \item 利用 Compose 进行版本管理，实时同步分发语言包
+            \item 利用Compose进行版本管理，实时同步分发语言包
         \end{itemize}
     \end{onehalfspacing}
-    \blankline{ }
 
     \datedsubsection{\textbf{\href{https://github.com/benheart/microblog-crawler}{Sina Micro Blog Crawler}}}{2016.03 - 2016.06}
     \datedline{\textit{微博爬虫设计实现，数据挖掘分析}}{\textit{https://github.com/benheart/microblog-crawler}}
@@ -150,7 +159,6 @@
             \item 利用Matplotlib绘图库和Gephi可视化工具进行数据展示，构建人物关系图谱
         \end{itemize}
     \end{onehalfspacing}
-    \blankline{ }
 
     \datedsubsection{\textbf{\href{https://github.com/benheart/BGP-Analyzer}{BGP Monitoring System}}}{2015.03 - 2015.06}
     \datedline{\textit{基于BGP协议的网络预警系统}}{\textit{https://github.com/benheart/BGP-Analyzer}}
@@ -160,7 +168,6 @@
             \item 利用无谷模型对网络安全事件进行检测、监控和预警
         \end{itemize}
     \end{onehalfspacing}
-    \blankline{ }
 
     \datedsubsection{\textbf{\href{https://github.com/benheart/linux-socket-programing}{Linux Socket Programing}}}{2015.03 - 2015.05}
     \datedline{\textit{Linux环境下C语言网络编程}}{\textit{https://github.com/benheart/linux-socket-programing}}
