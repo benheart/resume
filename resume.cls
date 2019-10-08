@@ -124,7 +124,7 @@
   \vspace{0.85ex}
 }
 
-\newcommand{\hwj}[1]{
+\newcommand{\blankline}[1]{
   \centerline{#1}
   \vspace{0.1ex}
 }
