@@ -7,6 +7,8 @@
 %\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
 \usepackage{linespacing_fix} % disable extra space before next section
 \usepackage{cite}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 
 \begin{document}
     \pagenumbering{gobble} % suppress displaying page number
@@ -14,8 +16,8 @@
     \name{胡文俊}
 
     \basicInfo{
-    \email{geek.hu@qq.com} \textperiodcentered\
     \phone{+86 186-4408-7527} \textperiodcentered\
+    \email{geek.hu@qq.com} \textperiodcentered\
     \github[GitHub - benheart]{https://github.com/benheart} \textperiodcentered\
     \faRss\ {\href{https://www.geeeeeeek.com/}{Blog - BenHeart}}}
 
@@ -28,28 +30,51 @@
 
     \datedsubsection{\textbf{美团点评(上海)} \hfill \textit{Java后台开发工程师}}{2017.07 - 至今}
     \begin{onehalfspacing}
-        \datedline{\textbf{页面监控系统}}{2019.05 - 2019.10}
-        \textbf{简介}：一套页面爬取、比对、监控的系统，RD、QA可以极低成本进行页面端到端监控\newline
-        \textbf{挑战}：
+        \datedline{\textbf{到综商户列表收归}}{2020.06 - 2020.09}
+        \textbf{背景}：到综休娱、丽人、结婚、学培等多个行业的商户列表页存在重复的业务功能和稳定性建设，且建设质量参差不齐，存在研发效率不高，用户体验不一致的问题。因此，统一收归商户列表页来维护和建设\newline
+        \textbf{职责}：负责各Bu商户列表功能需求承接，线上Case排查处理；对现有Bu商户列表功能梳理，归纳总结；调研业界商户列表，共性模块分析抽象；参与统一商户列表平台的设计和搭建。\newline
+        \textbf{行动}：
         \begin{itemize}
-            \item 无任何代码侵入，接入成本极低
-            \item 支持Jsoup、HtmlUnit、Selenium三种爬取方式
-            \item 采用加权的余弦相似度文本比对算法
-            \item 支持页面模块细粒度黑、白名单配置
-            \item 人性化的页面差异高亮预览
+            \item 架构分层：把现有列表页拆分为聚合场景层和主题场景层。架构分层的意义：1、降低了列表页系统的复杂性；2、便于接口模型标准化，标准化是配置化的基础；3、聚合服务不再关注底层领域模型；4、主题服务避免了不同展示场景中相同展示内容的重复建设问题
+            \item 配置化：对平台列表页系统处理流程进行统一抽象，确定易变节点和固化模型，对易变节点进行参数配置化
+            \item 高性能：1、下游RPC服务调用全面异步化；2、利用Redis缓存来提高服务性能；3、通过MQ异步更新缓存，减少对主流程影响
+            \item 高可用：1、进行周期压测确定单机容量；2、基于单机容量配置合理限流；3、根据服务强、弱依赖划分制定熔断降级方案
         \end{itemize}
         \textbf{收益}：
         \begin{itemize}
-            \item 已有4条业务线共计50+个页面接入页面监控系统
-            \item 共计发现10+起线上页面故障，及时帮助业务方减少影响范围
+            \item 已完成各Bu商户列表功能的交接和需求收归
+            \item 已调研淘宝商户列表现有功能和架构设计
+            \item 统一商户列表平台的设计和搭建正在进行中
+        \end{itemize}
+    \end{onehalfspacing}
+    \blankline{ }
+
+    \begin{onehalfspacing}
+        \datedline{\textbf{页面监控系统}}{2019.05 - 2019.11}
+        \textbf{背景}：面向开发和测试人员，支持录入基准页信息并保存基准页面Dom，通过定时任务爬取页面Dom，利用文本比对算法计算两者相似度来判断页面是否有变化，基于预设的告警阈值进行监控告警\newline
+        \textbf{职责}：独立负责整个系统的技术调研、方案设计和开发测试，从0到1搭建整套系统\newline
+        \textbf{行动}：
+        \begin{itemize}
+            \item 采用策略模式来支持Jsoup、HtmlUnit、Selenuim三种页面爬取方式
+            \item 采用余弦相似度文本比对算法进行Dom文本比对
+            \item 通过对Dom分层加权、子节点计数加权进行算法调优
+            \item 改造Dom节点Style样式进行页面差异比较
+        \end{itemize}
+        \textbf{收益}：
+        \begin{itemize}
+            \item 接入成本极低，仅需配置页面Url和告警接收人，无任何代码侵入
+            \item 支持页面模块细粒度黑、白名单配置，人性化的页面差异高亮预览
+            \item 已有5条业务线共计60+个页面接入页面监控系统，单页面平均接入时长2-3min
+            \item 上线至今，共计发现20+起线上页面故障，及时帮助业务方减少影响范围
         \end{itemize}
     \end{onehalfspacing}
     \blankline{ }
 
     \begin{onehalfspacing}
         \datedline{\textbf{统一Token加密服务}}{2018.10 - 2019.09}
-        \textbf{简介}：提供Phone、Email敏感信息统一Token化服务，对明文加密存储，并生成唯一Token返回\newline
-        \textbf{挑战}：
+        \textbf{简介}：手机号、邮箱等铭感信息明文展示及存储风险高，各团队安全意识参差不齐，加密方式各不相同，敏感数据的互通和交换成本较大，无法统一管理维护。为解决这些痛点，我们提供统一Token化服务，对明文加密存储，并生成唯一Token返回\newline
+        \textbf{职责}：负责统一Token服务的技术方案选型、开发测试，\newline
+        \textbf{行动}：
         \begin{itemize}
             \item 高可用：应用集群（到综、金融、出行）部署隔离；Tair缓存业务隔离，分BG调用；关键链路熔断降级；接入公司Rhnio服务限流、Hulk弹性伸缩
             \item 高性能：数据库分128张表；采用Redis、Tair双缓存；新号段数据预热；LeafId内存队列；Luhn算法快速失败
@@ -65,8 +90,8 @@
     \blankline{ }
 
     \begin{onehalfspacing}
-        \datedline{\textbf{学培业务开发}}{2017.7 - 2019.05}
-        \textbf{简介}：负责学培商家端、用户端品牌、在线教育、留学等常规业务开发\newline
+        \datedline{\textbf{常规业务开发}}{2017.7 - 2020.09}
+        \textbf{概述}：负责学培商家端、用户端品牌、在线教育、留学等常规业务开发\newline
         \textbf{内容}：
         \begin{itemize}
             \item 品牌重构：废弃ftl模板，采用前后端动静分离重构品牌模块；新增类目属性为品牌垂直化做铺垫；品牌接入诚信、资质审核，先发后审
@@ -85,10 +110,10 @@
     \blankline{ }
 
     \begin{onehalfspacing}
-        \datedline{\textbf{团队建设}}{2017.08 - 2019.10}
+        \datedline{\textbf{团队建设}}{2017.08 - 2020.09}
         \begin{itemize}
             \item 4次技术分享：《网络爬虫》、《分库分表》、《搜索之路》、《统一电话技术总结》
-            \item 规范制定：学培开发日志规范、项目压测规范
+            \item 规范制定：日志规范、压测规范、周报模板、上线规范
             \item 人才培养：帮助两位新人排查线上Case，解答疑惑，分享沟通技巧、工作心得
         \end{itemize}
     \end{onehalfspacing}
@@ -138,8 +163,17 @@
     \blankline{ }
 
     \section{\faBriefcase\ 个人项目}
-    \datedsubsection{\textbf{\href{https://github.com/benheart/magento2\_zh\_hans\_cn}{Magento2 Chinese Package}}}{2017.04 - 2017.06}
-    \datedline{\textit{Magento2开源电商平台中文化}}{\textit{https://github.com/benheart/magento2\_zh\_hans\_cn}}
+    \datedsubsection{\textbf{Bing壁纸爬虫} \hfill \textit{\href{https://github.com/benheart/BingGallery}{https://github.com/benheart/BingGallery}}}{2018.01}
+    \begin{onehalfspacing}
+        \begin{itemize}
+            \item Python爬虫学习
+            \item 分析HTTP数据报文，定位关键请求
+            \item 编写全量爬取Bing壁纸爬虫
+            \item 文档整理总结，并在博客、社交网站分享
+        \end{itemize}
+    \end{onehalfspacing}
+
+    \datedsubsection{\textbf{Magento2中文化} \hfill \textit{\href{https://github.com/benheart/magento2\_zh\_hans\_cn}{https://github.com/benheart/magento2\_zh\_hans\_cn}}}{2017.04 - 2017.06}
     \begin{onehalfspacing}
         \begin{itemize}
             \item 学习并掌握Magento2国际化(i18n)原理
@@ -148,8 +182,7 @@
         \end{itemize}
     \end{onehalfspacing}
 
-    \datedsubsection{\textbf{\href{https://github.com/benheart/microblog-crawler}{Sina Micro Blog Crawler}}}{2016.03 - 2016.06}
-    \datedline{\textit{微博爬虫设计实现，数据挖掘分析}}{\textit{https://github.com/benheart/microblog-crawler}}
+    \datedsubsection{\textbf{微博爬虫} \hfill \textit{\href{https://github.com/benheart/microblog-crawler}{https://github.com/benheart/microblog-crawler}}}{2016.03 - 2016.06}
     \begin{onehalfspacing}
         \begin{itemize}
             \item 爬取500多万微博用户资料、社交关系
@@ -157,26 +190,6 @@
             \item 多线程爬取(互斥锁)，支持多Cookie和断点爬取
             \item 爬取热门话题和特定用户群体，利用K-近邻算法处理Json格式数据进行用户分类
             \item 利用Matplotlib绘图库和Gephi可视化工具进行数据展示，构建人物关系图谱
-        \end{itemize}
-    \end{onehalfspacing}
-
-    \datedsubsection{\textbf{\href{https://github.com/benheart/BGP-Analyzer}{BGP Monitoring System}}}{2015.03 - 2015.06}
-    \datedline{\textit{基于BGP协议的网络预警系统}}{\textit{https://github.com/benheart/BGP-Analyzer}}
-    \begin{onehalfspacing}
-        \begin{itemize}
-            \item 每天定时从\href{http://www.routeviews.org}{RouteViews}官网自动爬取全球路由原始数据（1.4G），共计3.6亿条BGP路由数据
-            \item 利用无谷模型对网络安全事件进行检测、监控和预警
-        \end{itemize}
-    \end{onehalfspacing}
-
-    \datedsubsection{\textbf{\href{https://github.com/benheart/linux-socket-programing}{Linux Socket Programing}}}{2015.03 - 2015.05}
-    \datedline{\textit{Linux环境下C语言网络编程}}{\textit{https://github.com/benheart/linux-socket-programing}}
-    \begin{onehalfspacing}
-        \begin{itemize}
-            \item 基于UDP的时钟协议的实现
-            \item 基于TCP文件传输协议的实现
-            \item 简单网络嗅探器的实现
-            \item 基于ICMP协议的Ping实现
         \end{itemize}
     \end{onehalfspacing}
     \blankline{ }
