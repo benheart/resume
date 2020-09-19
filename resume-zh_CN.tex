@@ -11,7 +11,7 @@
 \usepackage[utf8]{inputenc}
 
 \begin{document}
-    \pagenumbering{gobble} % suppress displaying page number
+    % \pagenumbering{gobble} % suppress displaying page number
 
     \name{胡文俊}
 
@@ -26,6 +26,22 @@
     \textit{本科 \textperiodcentered\ 计算机学院 \textperiodcentered\ 信息安全}
     \blankline{ }
 
+    \section{\faUser\  个人特点}
+    \begin{onehalfspacing}
+        \begin{itemize}
+            \item 5年Java项目开发经验：美团点评3年，创业公司1年，并在搜狐、58同城有过两段实习经历
+            \item 拥有扎实Java基础和计算机基础知识（数据结构、算法、操作系统、网络及数据库）
+            \item 掌握Jvm原理和机制，具备Jvm性能调优能力
+            \item 熟悉常用技术框架和中间件（Spring/SpringBoot/MyBatis/Kafka/Redis等）
+            \item 熟悉分布式系统相关技术（分布式缓存、分布式事务、消息队列、限流熔断、容灾降级等）
+            \item 掌握高并发、高可用系统设计方案，并参与过公司基础服务的搭建和维护
+            \item 能独立承担大型软件项目系统分析和架构设计，有相关系统软件架构设计经验
+            \item 有技术热情，有良好的计划、沟通、组织协调能力，较强的项目管理能力和应变能力
+            \item 有带人经验，帮助新人快速熟悉业务、制定培养计划，工作任务拆分、设计指导和进度把控
+        \end{itemize}
+    \end{onehalfspacing}
+    \blankline{ }
+
     \section{\faUsers\ 工作/实习经历}
 
     \datedsubsection{\textbf{美团点评(上海)} \hfill \textit{Java后台开发工程师}}{2017.07 - 至今}
@@ -35,7 +51,7 @@
         \textbf{职责}：负责各Bu商户列表功能需求承接，线上Case排查处理；对现有Bu商户列表功能梳理，归纳总结；调研业界商户列表，共性模块分析抽象；参与统一商户列表平台的设计和搭建。\newline
         \textbf{行动}：
         \begin{itemize}
-            \item 架构分层：把现有列表页拆分为聚合场景层和主题场景层。架构分层的意义：1、降低了列表页系统的复杂性；2、便于接口模型标准化，标准化是配置化的基础；3、聚合服务不再关注底层领域模型；4、主题服务避免了不同展示场景中相同展示内容的重复建设问题
+            \item 架构分层：把现有列表页拆分为聚合场景层和主题场景层。架构分层的意义：1、降低了列表页系统的复杂性；2、便于接口模型标准化，标准化是配置化的基础；3、聚合服务不再关注底层领域模型；4、主题服务避免不同展示场景中相同展示内容的重复建设问题
             \item 配置化：对平台列表页系统处理流程进行统一抽象，确定易变节点和固化模型，对易变节点进行参数配置化
             \item 高性能：1、下游RPC服务调用全面异步化；2、利用Redis缓存来提高服务性能；3、通过MQ异步更新缓存，减少对主流程影响
             \item 高可用：1、进行周期压测确定单机容量；2、基于单机容量配置合理限流；3、根据服务强、弱依赖划分制定熔断降级方案
@@ -58,7 +74,7 @@
             \item 采用策略模式来支持Jsoup、HtmlUnit、Selenuim三种页面爬取方式
             \item 采用余弦相似度文本比对算法进行Dom文本比对
             \item 通过对Dom分层加权、子节点计数加权进行算法调优
-            \item 改造Dom节点Style样式进行页面差异比较
+            \item 改造Dom节点Style样式进行页面差异高亮
         \end{itemize}
         \textbf{收益}：
         \begin{itemize}
@@ -66,25 +82,27 @@
             \item 支持页面模块细粒度黑、白名单配置，人性化的页面差异高亮预览
             \item 已有5条业务线共计60+个页面接入页面监控系统，单页面平均接入时长2-3min
             \item 上线至今，共计发现20+起线上页面故障，及时帮助业务方减少影响范围
+            \item 系统方案通过公司内部专利评审，案件已向专利局提交中
         \end{itemize}
     \end{onehalfspacing}
     \blankline{ }
 
     \begin{onehalfspacing}
         \datedline{\textbf{统一Token加密服务}}{2018.10 - 2019.09}
-        \textbf{简介}：手机号、邮箱等铭感信息明文展示及存储风险高，各团队安全意识参差不齐，加密方式各不相同，敏感数据的互通和交换成本较大，无法统一管理维护。为解决这些痛点，我们提供统一Token化服务，对明文加密存储，并生成唯一Token返回\newline
-        \textbf{职责}：负责统一Token服务的技术方案选型、开发测试，\newline
+        \textbf{背景}：手机号、邮箱等敏感信息明文展示及存储风险高，各团队安全意识参差不齐，加密方式各不相同，敏感数据的互通和交换成本较大，无法统一管理维护。为解决这些痛点，我们提供统一Token化服务，对明文加密存储，并生成唯一Token返回\newline
+        \textbf{职责}：负责统一Token服务的技术方案选型、开发维护，业务方服务接入对接\newline
         \textbf{行动}：
         \begin{itemize}
+            \item 安全性：1、采用AES256-GCM加密算法，秘钥定期轮换；2、建立明文、密文、Token映射，业务方传入明文返回Token，传入Token返回明文，平台统一存储和管理密文；3、Token与明文不能通过解密或计算获得，防破解、遍历
+            \item 高性能：1、预估容量，对MySQL数据库拆分128张表提升数据读写效率；2、采用Redis和Tair双缓存机制提高查询效率和容灾能力；3、Kafka异步更新缓存减少对主流程的影响；4、提前新号段预热、新BG接入缓存预热提高缓存命中率；5、LeafId内存队列；6、Luhn算法快速失败
             \item 高可用：应用集群（到综、金融、出行）部署隔离；Tair缓存业务隔离，分BG调用；关键链路熔断降级；接入公司Rhnio服务限流、Hulk弹性伸缩
-            \item 高性能：数据库分128张表；采用Redis、Tair双缓存；新号段数据预热；LeafId内存队列；Luhn算法快速失败
-            \item 安全性：采用AES256-GCM加密算法，秘钥定期轮换；Token与明文不能通过解密或计算获得，防破解、遍历
-            \item 易用性：Token长度控制在15位以内，业务方无需做DDL改造；提供Token平台方便业务方自主接入，审核、管理流程化
+            \item 易用性：1、Token长度控制在15位以内，业务方无需做DDL改造；2、提供Token平台方便业务方自主接入，审核、管理流程化
         \end{itemize}
         \textbf{收益}：
         \begin{itemize}
-            \item 全公司5大事业群61个开发团队共计300+应用接入统一Token加密服务
-            \item 日均调用量10亿，峰值QPS 2W+，共收录近9亿Token数据
+            \item 全公司5大事业群60+个开发团队共计300+应用接入统一Token加密服务
+            \item 共收录近9亿Token，日均调用10亿+，峰值QPS 2W+
+            \item 服务可用性99.999\%以上，平均响应时间0.6ms，999线3.8ms
         \end{itemize}
     \end{onehalfspacing}
     \blankline{ }
@@ -94,17 +112,17 @@
         \textbf{概述}：负责学培商家端、用户端品牌、在线教育、留学等常规业务开发\newline
         \textbf{内容}：
         \begin{itemize}
-            \item 品牌重构：废弃ftl模板，采用前后端动静分离重构品牌模块；新增类目属性为品牌垂直化做铺垫；品牌接入诚信、资质审核，先发后审
-            \item 在线教育：学培频道页新增在线教育入口；商户品牌、课程信息整合展示；新增品牌、课程索引提升查询效率
-            \item 留学专区：全新留学专区频道页开发；新增留学院校、留学国家、留学类目等数据模型；留学院校运营后台功能开发
             \item 频道页改版：金刚位、类目导航、中通位对接海马平台；支持模块可配置，扩展性和复用性；保证高可用，配置监控告警
+            \item 留学专区：全新留学专区频道页开发；新增留学院校、留学国家、留学类目等数据模型；留学院校运营后台功能开发
+            \item 在线教育：学培频道页新增在线教育入口；商户品牌、课程信息整合展示；新增品牌、课程索引提升查询效率
+            \item 品牌重构：废弃ftl模板，采用前后端动静分离重构品牌模块；新增类目属性为品牌垂直化做铺垫；品牌接入诚信、资质审核，先发后审
         \end{itemize}
         \textbf{收益}：
         \begin{itemize}
-            \item 品牌重构后，线上品牌月均Case降低70\%
-            \item 在线教育上线至今，共计接入37家全国知名在线教育品牌，极大提升业务收入
+            \item 频道页改版后，首页秒开率提升30\%，用户意向转化率提升3\%
             \item 留学专区上线至今，共计录入456所全球热门留学院校，新增3种留学商户通
-            \item 频道页改版后，首页打开速度提升30\%，用户意向转化率提升3\%
+            \item 在线教育上线至今，共计接入37家全国知名在线教育品牌，为学培品牌业务增收
+            \item 品牌重构后，月均Case由上线前2-3个降至0个
         \end{itemize}
     \end{onehalfspacing}
     \blankline{ }
@@ -114,7 +132,7 @@
         \begin{itemize}
             \item 4次技术分享：《网络爬虫》、《分库分表》、《搜索之路》、《统一电话技术总结》
             \item 规范制定：日志规范、压测规范、周报模板、上线规范
-            \item 人才培养：帮助两位新人排查线上Case，解答疑惑，分享沟通技巧、工作心得
+            \item 人才培养：帮助两位新人快速熟悉业务、制定培养计划，工作任务拆分、设计指导和进度把控
         \end{itemize}
     \end{onehalfspacing}
     \blankline{ }
@@ -162,7 +180,7 @@
     \end{onehalfspacing}
     \blankline{ }
 
-    \section{\faBriefcase\ 个人项目}
+    \section{\faBriefcase\ 开源项目}
     \datedsubsection{\textbf{Bing壁纸爬虫} \hfill \textit{\href{https://github.com/benheart/BingGallery}{https://github.com/benheart/BingGallery}}}{2018.01}
     \begin{onehalfspacing}
         \begin{itemize}
@@ -172,8 +190,9 @@
             \item 文档整理总结，并在博客、社交网站分享
         \end{itemize}
     \end{onehalfspacing}
+    \blankline{ }
 
-    \datedsubsection{\textbf{Magento2中文化} \hfill \textit{\href{https://github.com/benheart/magento2\_zh\_hans\_cn}{https://github.com/benheart/magento2\_zh\_hans\_cn}}}{2017.04 - 2017.06}
+    \datedsubsection{\textbf{Magento2中文化} \hfill \textit{\href{https://github.com/benheart/magento2\_zh\_hans\_cn}{https://github.com/benheart/magento2\_zh\_hans\_cn}}}{2017.06}
     \begin{onehalfspacing}
         \begin{itemize}
             \item 学习并掌握Magento2国际化(i18n)原理
@@ -181,6 +200,7 @@
             \item 利用Compose进行版本管理，实时同步分发语言包
         \end{itemize}
     \end{onehalfspacing}
+    \blankline{ }
 
     \datedsubsection{\textbf{微博爬虫} \hfill \textit{\href{https://github.com/benheart/microblog-crawler}{https://github.com/benheart/microblog-crawler}}}{2016.03 - 2016.06}
     \begin{onehalfspacing}
@@ -204,6 +224,7 @@
     \blankline{ }
 
     \section{\faTrophy\ 荣誉奖励}
+    \datedline{\textit{美团点评“专利创客”荣誉称号}}{2020.03}
     \datedline{\textit{哈尔滨工业大学“优秀学生干部”}}{2014.12}
     \datedline{\textit{大一年度科技创新项目获得全院二等奖}}{2013.06}
     \blankline{ }
